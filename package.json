@@ -1,0 +1,8 @@
+{
+  "name": "node-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:angelomedeiros/boilerplate-node-typescript.git",
+  "author": "Angelo Medeiros <angelomedeiros3@gmail.com>",
+  "license": "MIT"
+}
