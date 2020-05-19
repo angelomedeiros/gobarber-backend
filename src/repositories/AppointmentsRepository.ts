@@ -8,6 +8,10 @@ export default class AppointmentRepository {
     this.appointments = [];
   }
 
+  public findAll(): Appointment[] {
+    return this.appointments;
+  }
+
   public findByDate(date: Date): Appointment | null {
     return (
       this.appointments.find(appointment => isEqual(appointment.date, date)) ||
