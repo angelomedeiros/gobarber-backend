@@ -8,7 +8,8 @@
   "scripts": {
     "build": "tsc",
     "dev:server": "ts-node-dev --transpileOnly --ignore node_modules src/server.ts",
-    "dev:debug": "ts-node-dev --inspect --transpileOnly --ignore node_modules src/server.ts"
+    "dev:debug": "ts-node-dev --inspect --transpileOnly --ignore node_modules src/server.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
     "date-fns": "^2.14.0",

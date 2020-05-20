@@ -36,7 +36,8 @@
         "prefix": ["I"]
       }
     ],
-    "@typescript-eslint/interface-name-prefix": "off"
+    "@typescript-eslint/interface-name-prefix": "off",
+    "class-methods-use-this": "off"
   },
   "settings": {
     "import/resolver": {
