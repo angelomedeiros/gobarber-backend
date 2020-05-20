@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:12.3
+    environment:
+      POSTGRES_PASSWORD: gobarber
+      POSTGRES_USER: gobarber
+    ports:
+      - 5432:5432
