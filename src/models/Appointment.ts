@@ -14,7 +14,7 @@ export default class Appointment {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column('varchar')
+  @Column('uuid')
   provider_id: string;
 
   @ManyToOne(() => User)
