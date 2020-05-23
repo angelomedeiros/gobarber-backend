@@ -1,5 +1,7 @@
 _README.md
 server.js
+tmp/*
+!tmp/.gitkeep
 
 # Created by https://www.gitignore.io/api/node,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=node,visualstudiocode
@@ -104,7 +106,6 @@ dist/
 .dynamodb/
 
 # Temporary folders
-tmp/
 temp/
 
 ### VisualStudioCode ###
