@@ -14,8 +14,11 @@ export default class User {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ select: false })
   password: string;
+
+  @Column()
+  avatar: string;
 
   @Column()
   email: string;
