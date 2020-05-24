@@ -23,7 +23,7 @@ usersRouter.post('/', async (req, res) => {
 
     return res.json(user);
   } catch (error) {
-    return res.status(400).json({
+    return res.status(error.statusCode).json({
       error: error.message,
     });
   }
@@ -44,7 +44,7 @@ usersRouter.patch(
 
       return res.send(user);
     } catch (error) {
-      return res.status(400).json({
+      return res.status(error.statusCode).json({
         error: error.message,
       });
     }

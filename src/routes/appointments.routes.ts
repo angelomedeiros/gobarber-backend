@@ -29,8 +29,8 @@ appointmentsRouter.post('/', auth, async (req, res) => {
     });
 
     return res.json(appointment);
-  } catch (err) {
-    return res.status(400).json({ error: err.message });
+  } catch (error) {
+    return res.status(error.statusCode).json({ error: error.message });
   }
 });
 

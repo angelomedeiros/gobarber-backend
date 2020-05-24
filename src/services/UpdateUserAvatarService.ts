@@ -1,8 +1,9 @@
 import { getRepository } from 'typeorm';
 import path from 'path';
 import fs from 'fs';
-import User from '../models/User';
 
+import User from '../models/User';
+import AppError from '../errors/AppError';
 import { filesDirectory } from '../config/upload';
 
 interface IRequest {
@@ -21,7 +22,7 @@ export default class UploadUserAvatarService {
     });
 
     if (!user) {
-      throw new Error('Only authenticated users can change avatar');
+      throw new AppError('Only authenticated users can change avatar', 401);
     }
 
     if (user.avatar) {
