@@ -33,6 +33,7 @@
         "argsIgnorePattern": "_"
       }
     ],
+    "no-useless-constructor": "off",
     "no-console": ["error", { "allow": ["warn", "error", "info"] }],
     "prettier/prettier": "error",
     "@typescript-eslint/naming-convention": [
