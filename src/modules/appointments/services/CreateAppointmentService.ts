@@ -2,7 +2,7 @@ import { startOfHour } from 'date-fns';
 import { getCustomRepository } from 'typeorm';
 
 import Appointment from '@modules/appointments/infra/typeorm/entities/Appointment';
-import AppointmentRepository from '@modules/appointments/repositories/AppointmentsRepository';
+import AppointmentRepository from '@modules/appointments/infra/typeorm/repositories/AppointmentsRepository';
 import AppError from '@shared/errors/AppError';
 
 interface IRequestDTO {
