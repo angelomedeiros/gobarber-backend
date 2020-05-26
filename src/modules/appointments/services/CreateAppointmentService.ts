@@ -24,12 +24,10 @@ export default class CreateAppointmentService {
       throw new AppError('This appoitnment is already booked');
     }
 
-    const appointment = appointmentsRepository.create({
+    const appointment = await appointmentsRepository.create({
       date: appointmentDate,
       provider_id,
     });
-
-    await appointmentsRepository.save(appointment);
 
     return appointment;
   }
