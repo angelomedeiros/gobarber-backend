@@ -4,15 +4,20 @@ import fs from 'fs';
 import User from '@modules/users/infra/typeorm/entities/User';
 import AppError from '@shared/errors/AppError';
 import { filesDirectory } from '@config/upload';
-import IUsersRespository from '../repositories/IUsersRepository';
+import { inject, injectable } from 'tsyringe';
+import IUsersRepository from '../repositories/IUsersRepository';
 
 interface IRequest {
   user_id: string;
   avatarFilename: string;
 }
 
+@injectable()
 export default class UploadUserAvatarService {
-  constructor(private usersRepository: IUsersRespository) {}
+  constructor(
+    @inject('UsersRepository')
+    private usersRepository: IUsersRepository,
+  ) {}
 
   public async run({ user_id, avatarFilename }: IRequest): Promise<User> {
     const user = await this.usersRepository.findById(user_id);

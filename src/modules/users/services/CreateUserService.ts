@@ -1,12 +1,17 @@
 import { hash } from 'bcryptjs';
 import AppError from '@shared/errors/AppError';
+import { inject, injectable } from 'tsyringe';
 
 import User from '@modules/users/infra/typeorm/entities/User';
-import IUsersRespository from '@modules/users/repositories/IUsersRepository';
+import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import ICreateUserDTO from '../dtos/ICreateUserDTO';
 
+@injectable()
 export default class CreateUserService {
-  constructor(private userRepository: IUsersRespository) {}
+  constructor(
+    @inject('UsersRepository')
+    private userRepository: IUsersRepository,
+  ) {}
 
   public async run({ email, name, password }: ICreateUserDTO): Promise<User> {
     const checkUserExists = await this.userRepository.findByEmail(email);
